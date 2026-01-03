@@ -51,7 +51,7 @@ export default function Projects() {
       category: "MERN Stack",
       link: "https://quiz-jmux.vercel.app",
       github: "https://github.com/vikask011/quiz",
-      image: "/adaptive-quiz-learning-platform.jpg",
+      image: "/adpative-quiz.avif",
     },
   ]
 
