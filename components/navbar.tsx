@@ -3,24 +3,38 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 export default function Navbar({ activeSection, setActiveSection }: any) {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
 
   const navItems = [
     { label: "About", id: "about" },
     { label: "Skills", id: "skills" },
+    { label: "Experience", id: "experience" },
     { label: "Projects", id: "projects" },
     { label: "Contact", id: "contact" },
   ]
 
+  const handleLogoClick = () => {
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }
+
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <nav className="sticky top-2 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            Vikas K
+          
+          {/* ✅ FIXED LOGO */}
+          <Link
+            href="/"
+            onClick={handleLogoClick}
+            className="text-2xl font-bold text-gray-900 cursor-pointer"
+          >
+            VIKAS K
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,7 +61,11 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

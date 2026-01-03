@@ -1,8 +1,26 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function Hero() {
+  const [text, setText] = useState("")
+  const fullText = "console.log('Hello World!');"
+  
+  useEffect(() => {
+    let index = 0
+    const timer = setInterval(() => {
+      if (index <= fullText.length) {
+        setText(fullText.slice(0, index))
+        index++
+      } else {
+        clearInterval(timer)
+      }
+    }, 100)
+    
+    return () => clearInterval(timer)
+  }, [])
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-5">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
       <div
         className="absolute inset-0 opacity-30"
@@ -16,6 +34,14 @@ export default function Hero() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="space-y-6">
+          {/* Console.log typing animation */}
+          <div className="inline-block mb-2">
+            <code className="text-black font-mono text-sm">
+              {text}
+              <span className="inline-block w-2 h-4 bg-black ml-1 animate-blink" />
+            </code>
+          </div>
+
           <div className="space-y-2">
             <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 text-balance">
               Hello! I'm <span className="text-blue-600">Vikas K</span>
@@ -69,6 +95,17 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+        }
+        
+        .animate-blink {
+          animation: blink 1s step-end infinite;
+        }
+      `}</style>
     </section>
   )
 }

@@ -2,7 +2,7 @@ import { Mail, Phone, Linkedin, Github } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="contact" className="py-10 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Get In Touch</h2>
         <p className="text-gray-600 text-center text-lg mb-12 max-w-2xl mx-auto">

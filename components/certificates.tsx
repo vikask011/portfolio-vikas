@@ -3,33 +3,16 @@ import { Award, Download } from "lucide-react"
 export default function Certificates() {
   const certificates = [
     {
-      title: "Full Stack Web Development",
-      issuer: "Udemy",
-      date: "2024",
-      credentialId: "UC-XXXXX",
-      url: "#",
-    },
-    {
-      title: "React Advanced Patterns",
+      title: "Developing Front-End with React",
       issuer: "Coursera",
-      date: "2023",
-      credentialId: "COR-XXXXX",
-      url: "#",
+      url: "https://www.coursera.org/account/accomplishments/verify/3QBHW6DGTDLN?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
     },
     {
-      title: "SQL & Database Design",
-      issuer: "LinkedIn Learning",
-      date: "2023",
-      credentialId: "LL-XXXXX",
-      url: "#",
+      title: "Developing Back-End with Node.js and Express",
+      issuer: "Coursera",
+      url: "https://www.coursera.org/account/accomplishments/verify/3WT2Y0HK3EU4?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
     },
-    {
-      title: "JavaScript Mastery",
-      issuer: "Udemy",
-      date: "2023",
-      credentialId: "UC-YYYYY",
-      url: "#",
-    },
+  
   ]
 
   return (
@@ -57,12 +40,6 @@ export default function Certificates() {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">{cert.title}</h3>
                 <p className="text-blue-600 font-semibold text-sm mb-2">{cert.issuer}</p>
                 <p className="text-gray-500 text-xs mb-3">{cert.date}</p>
-
-                <div className="bg-gray-50 p-2 rounded mb-4 flex-grow">
-                  <p className="text-gray-600 text-xs">
-                    <span className="font-semibold">ID:</span> {cert.credentialId}
-                  </p>
-                </div>
 
                 <a
                   href={cert.url}
