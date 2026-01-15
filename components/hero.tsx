@@ -1,10 +1,17 @@
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
 import { useEffect, useState } from "react"
+import Lottie from "lottie-react"
+
+// ✅ Correct import (keep folder name as-is)
+import DeveloperAnimation from "./assests/Developer.json"
 
 export default function Hero() {
   const [text, setText] = useState("")
   const fullText = "console.log('Hello World!');"
-  
+
+  /* -------------------------------
+     Typing Animation
+  -------------------------------- */
   useEffect(() => {
     let index = 0
     const timer = setInterval(() => {
@@ -15,46 +22,49 @@ export default function Hero() {
         clearInterval(timer)
       }
     }, 100)
-    
+
     return () => clearInterval(timer)
   }, [])
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-5">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50" />
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                            radial-gradient(circle at 80% 80%, rgba(129, 140, 248, 0.1) 0%, transparent 50%)`,
-        }}
-      />
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+    <section
+      id="home"
+      className="min-h-screen flex items-center relative overflow-hidden pt-10"
+    >
+      {/* Background (simple & clean) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 -z-10" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="space-y-6">
-          {/* Console.log typing animation */}
-          <div className="inline-block mb-2">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+        {/* ============================
+            LEFT SIDE — TEXT CONTENT
+        ============================ */}
+        <div className="space-y-6 text-center lg:text-left">
+
+          {/* Typing */}
+          <div className="inline-block">
             <code className="text-black font-mono text-sm">
               {text}
               <span className="inline-block w-2 h-4 bg-black ml-1 animate-blink" />
             </code>
           </div>
 
-          <div className="space-y-2">
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 text-balance">
-              Hello! I'm <span className="text-blue-600">Vikas K</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600">Full Stack Developer</p>
-          </div>
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900">
+            Hello! I'm <span className="text-blue-600">Vikas K</span>
+          </h1>
 
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto text-balance">
-            Full Stack Engineer specializing in building robust, scalable web applications with modern technologies.
-            Passionate about clean code, solving complex problems, and delivering impactful digital solutions.
+          <p className="text-xl sm:text-2xl text-gray-600">
+            Full Stack Developer
           </p>
 
-          <div className="flex justify-center gap-4 pt-4">
+          <p className="text-lg text-gray-600 max-w-xl">
+            Full Stack Engineer specializing in building robust, scalable web
+            applications with modern technologies. Passionate about clean code,
+            solving complex problems, and delivering impactful digital solutions.
+          </p>
+
+          {/* Socials */}
+          <div className="flex justify-center lg:justify-start gap-4 pt-2">
             <a
               href="https://github.com/vikask011"
               target="_blank"
@@ -79,10 +89,11 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start">
             <a
               href="#projects"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium inline-flex items-center justify-center gap-2"
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium inline-flex items-center gap-2"
             >
               View My Work <ArrowRight size={20} />
             </a>
@@ -94,14 +105,26 @@ export default function Hero() {
             </a>
           </div>
         </div>
+
+        {/* ============================
+            RIGHT SIDE — LOTTIE
+        ============================ */}
+        <div className="flex justify-center lg:justify-end">
+          <Lottie
+            animationData={DeveloperAnimation}
+            loop
+            autoplay
+            className="w-[320px] sm:w-[380px] md:w-[420px] lg:w-[480px]"
+          />
+        </div>
       </div>
 
+      {/* Cursor Blink */}
       <style>{`
         @keyframes blink {
           0%, 50% { opacity: 1; }
           51%, 100% { opacity: 0; }
         }
-        
         .animate-blink {
           animation: blink 1s step-end infinite;
         }
