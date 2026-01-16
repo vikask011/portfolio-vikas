@@ -19,7 +19,7 @@ export default function Contact() {
               <Mail className="text-blue-600" size={24} />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-            <p className="text-gray-600 break-all">vikas95116@gmail.com</p>
+            <p className="text-gray-600 break-all">vikask050905@gmail.com</p>
           </a>
 
           {/* Phone */}
@@ -77,7 +77,7 @@ export default function Contact() {
 
         {/* Footer */}
         <div className="mt-12 text-center text-gray-500 text-sm">
-          <p>© 2025 Vikas K. All rights reserved.</p>
+          <p>2026 Vikas K</p>
         </div>
       </div>
     </section>
