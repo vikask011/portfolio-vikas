@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, FileText } from "lucide-react"
 import { usePathname } from "next/navigation"
 
 export default function Navbar({ activeSection, setActiveSection }: any) {
@@ -27,8 +27,8 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
     <nav className="sticky top-2 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
-          {/* ✅ FIXED LOGO */}
+
+          {/* Logo */}
           <Link
             href="/"
             onClick={handleLogoClick}
@@ -50,13 +50,16 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Desktop View Resume Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition font-medium"
             >
-              Get In Touch
+              <FileText size={16} />
+              View Resume
             </a>
           </div>
 
@@ -83,12 +86,17 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
                 {item.label}
               </a>
             ))}
+
+            {/* Mobile View Resume Button */}
             <a
-              href="#contact"
-              className="block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center mt-2"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition font-medium mt-2"
               onClick={() => setIsOpen(false)}
             >
-              Get In Touch
+              <FileText size={16} />
+              View Resume
             </a>
           </div>
         )}
