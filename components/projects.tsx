@@ -82,7 +82,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-            Featured <span className="text-emerald-500">Projects</span>
+            Featured <span className="text-blue-500">Projects</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl">
             A selection of my recent work building scalable web applications and interactive AI experiences.
@@ -93,7 +93,7 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
+              className="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
             >
               {/* Image Container - Using aspect-video to fill box without zoom */}
               <div className="aspect-video w-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
@@ -106,14 +106,14 @@ export default function Projects() {
 
               {/* Tag Section - Inside the card box, outside the image */}
               <div className="px-6 pt-5">
-                <span className="inline-block bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full border border-emerald-100 dark:border-emerald-500/20">
+                <span className="inline-block bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full border border-blue-100 dark:border-blue-500/20">
                   {project.category}
                 </span>
               </div>
 
               {/* Content Section */}
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-emerald-500 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed line-clamp-3">
@@ -136,7 +136,7 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-bold text-sm transition-colors"
+                    className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 font-bold text-sm transition-colors"
                   >
                     Live Demo <ExternalLink size={14} />
                   </a>
@@ -154,7 +154,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="mt-20 text-center bg-emerald-500/5 rounded-3xl p-12 border border-emerald-500/10">
+        <div className="mt-20 text-center bg-blue-500/5 rounded-3xl p-12 border border-blue-500/10">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Want to discuss a project?</h3>
           <p className="text-gray-600 dark:text-gray-400 mb-8">I'm currently looking for new opportunities and collaborations.</p>
           <a
