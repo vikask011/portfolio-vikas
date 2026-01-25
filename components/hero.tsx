@@ -29,7 +29,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative overflow-hidden pt-10"
+      className="min-h-screen flex items-center relative overflow-hidden pt-1"
     >
       {/* Background (simple & clean) */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 -z-10" />
