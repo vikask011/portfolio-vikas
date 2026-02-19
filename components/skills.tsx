@@ -46,49 +46,28 @@ const skillCategories = [
   },
 ];
 
-// Variants for the section heading
 const headingVariants = {
   hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// Variants for each category block
 const categoryVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-      delay: i * 0.15,
-    },
+    transition: { duration: 0.5, ease: "easeOut", delay: i * 0.15 },
   }),
 };
 
-// Stagger container for skill cards inside a category
 const gridVariants = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.07,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.07 } },
 };
 
-// Individual skill card entrance
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.82, y: 20 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
@@ -98,15 +77,13 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
       whileHover={{
         scale: 1.08,
         y: -6,
-        boxShadow:
-          "0 12px 32px -4px rgba(99,102,241,0.18), 0 4px 12px -2px rgba(99,102,241,0.12)",
+        boxShadow: "0 12px 32px -4px rgba(99,102,241,0.25), 0 4px 12px -2px rgba(99,102,241,0.15)",
         transition: { duration: 0.22, ease: "easeOut" },
       }}
       whileTap={{ scale: 0.97 }}
-      className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm cursor-default"
+      className="flex flex-col items-center text-center p-4 bg-white dark:bg-gray-900 border border-transparent dark:border-gray-800 rounded-xl shadow-sm dark:shadow-none cursor-default"
       style={{ willChange: "transform" }}
     >
-      {/* Icon wrapper with a subtle spin on hover via a child motion */}
       <motion.div
         className="w-12 h-12 mb-3 flex items-center justify-center"
         whileHover={{ rotate: [0, -8, 8, -4, 4, 0], transition: { duration: 0.5 } }}
@@ -114,7 +91,7 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
         <img
           src={skill.icon}
           alt={skill.name}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain dark:brightness-90"
           onError={(e) => {
             const img = e.target as HTMLImageElement;
             img.style.display = "none";
@@ -127,9 +104,8 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
         </div>
       </motion.div>
 
-      <span className="font-medium text-gray-700 text-sm">{skill.name}</span>
+      <span className="font-medium text-gray-700 dark:text-gray-300 text-sm">{skill.name}</span>
 
-      {/* Animated underline on hover */}
       <motion.div
         className="h-0.5 bg-indigo-400 rounded-full mt-1"
         initial={{ width: 0 }}
@@ -148,7 +124,6 @@ function CategoryBlock({
   index: number;
 }) {
   const ref = useRef(null);
-  // Trigger animation only once when 20% of the block is visible
   const inView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
@@ -159,7 +134,6 @@ function CategoryBlock({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
-      {/* Category label with a left accent bar */}
       <div className="flex items-center gap-3 mb-6">
         <motion.div
           className="w-1 rounded-full bg-indigo-500"
@@ -167,7 +141,7 @@ function CategoryBlock({
           animate={inView ? { height: 28 } : { height: 0 }}
           transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
         />
-        <h3 className="text-xl font-semibold text-gray-800">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
           {category.category}
         </h3>
       </div>
@@ -191,7 +165,6 @@ export default function Skills() {
   const headingRef = useRef(null);
   const headingInView = useInView(headingRef, { once: true, amount: 0.5 });
 
-  // Subtle parallax on the section background blobs
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -203,18 +176,18 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-24 bg-gray-50 overflow-hidden"
+      className="relative py-24 bg-gray-50 dark:bg-black overflow-hidden"
     >
       {/* Decorative background blobs */}
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
-        className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-100 rounded-full opacity-40 blur-3xl pointer-events-none"
+        className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-100 dark:bg-indigo-950 rounded-full opacity-40 dark:opacity-20 blur-3xl pointer-events-none"
       />
       <motion.div
         aria-hidden
         style={{ y: blob2Y }}
-        className="absolute -bottom-24 -right-24 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl pointer-events-none"
+        className="absolute -bottom-24 -right-24 w-80 h-80 bg-purple-100 dark:bg-purple-950 rounded-full opacity-30 dark:opacity-20 blur-3xl pointer-events-none"
       />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,7 +199,7 @@ export default function Skills() {
           animate={headingInView ? "visible" : "hidden"}
           className="mb-14"
         >
-          <h2 className="text-4xl font-bold text-gray-900">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
             Skills &amp; Expertise
           </h2>
           <motion.div

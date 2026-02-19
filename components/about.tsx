@@ -10,8 +10,6 @@ import {
   useTransform,
 } from "framer-motion";
 
-// ── Variants ──────────────────────────────────────────────────────────────────
-
 const headingVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
@@ -51,8 +49,6 @@ const lottieVariants = {
   },
 };
 
-// ── Component ─────────────────────────────────────────────────────────────────
-
 export default function About() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -65,7 +61,6 @@ export default function About() {
   const textInView    = useInView(textRef,    { once: true, amount: 0.2 });
   const lottieInView  = useInView(lottieRef,  { once: true, amount: 0.3 });
 
-  // Parallax blobs
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
@@ -74,15 +69,15 @@ export default function About() {
   const blob2Y = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
 
   const infoItems = [
-    { label: "Profile",   value: "Full Stack Web Developer" },
-    { label: "Location",  value: "Bengaluru, Karnataka, India" },
+    { label: "Profile",  value: "Full Stack Web Developer" },
+    { label: "Location", value: "Bengaluru, Karnataka, India" },
   ];
 
   return (
     <section
       id="about"
       ref={sectionRef}
-      className="py-8 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden"
+      className="py-8 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden"
     >
       {/* Background pattern */}
       <div
@@ -97,17 +92,17 @@ export default function About() {
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
-        className="absolute top-20 right-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-20 pointer-events-none"
+        className="absolute top-20 right-10 w-72 h-72 bg-blue-100 dark:bg-blue-900 rounded-full blur-3xl opacity-20 pointer-events-none"
       />
       <motion.div
         aria-hidden
         style={{ y: blob2Y }}
-        className="absolute bottom-20 left-10 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30 pointer-events-none"
+        className="absolute bottom-20 left-10 w-96 h-96 bg-blue-200 dark:bg-blue-800 rounded-full blur-3xl opacity-30 pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* ── Heading ───────────────────────────────────────────── */}
+        {/* Heading */}
         <motion.div
           ref={headingRef}
           variants={headingVariants}
@@ -115,9 +110,7 @@ export default function About() {
           animate={headingInView ? "visible" : "hidden"}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">About Me</h2>
-
-          {/* Animated underline */}
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
           <motion.div
             className="h-1 bg-blue-600 mx-auto rounded-full"
             initial={{ width: 0 }}
@@ -126,7 +119,7 @@ export default function About() {
           />
         </motion.div>
 
-        {/* ── Main Card ─────────────────────────────────────────── */}
+        {/* Main Card */}
         <motion.div
           ref={cardRef}
           variants={cardVariants}
@@ -136,14 +129,14 @@ export default function About() {
             boxShadow: "0 20px 48px -8px rgba(59,130,246,0.12)",
             transition: { duration: 0.3 },
           }}
-          className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100"
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 dark:border-gray-700"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-            {/* ── LEFT: Text ──────────────────────────────────────── */}
+            {/* LEFT: Text */}
             <motion.div
               ref={textRef}
-              className="space-y-6 text-gray-700 text-lg leading-relaxed"
+              className="space-y-6 text-gray-700 dark:text-gray-300 text-lg leading-relaxed"
               variants={textContainerVariants}
               initial="hidden"
               animate={textInView ? "visible" : "hidden"}
@@ -167,7 +160,7 @@ export default function About() {
               </motion.p>
 
               {/* Info cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 border-t border-gray-200">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8 border-t border-gray-200 dark:border-gray-600">
                 {infoItems.map((item, i) => (
                   <motion.div
                     key={item.label}
@@ -175,14 +168,15 @@ export default function About() {
                     variants={infoCardVariants}
                     initial="hidden"
                     animate={textInView ? "visible" : "hidden"}
+                    // ✅ Removed inline whileHover backgroundColor — handled by Tailwind below
                     whileHover={{
-                      backgroundColor: "rgb(239 246 255)",
                       borderLeftColor: "rgb(37 99 235)",
                       transition: { duration: 0.2 },
                     }}
-                    className="group p-6 rounded-xl transition-colors border-l-4 border-transparent cursor-default"
+                    className="group p-6 rounded-xl transition-colors duration-200 border-l-4 border-transparent cursor-default
+                      hover:bg-blue-50 dark:hover:bg-gray-700"
                   >
-                    <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                       <motion.span
                         className="w-2 h-2 bg-blue-600 rounded-full inline-block"
                         whileHover={{ scale: 1.5 }}
@@ -190,13 +184,13 @@ export default function About() {
                       />
                       {item.label}
                     </h3>
-                    <p className="text-gray-600">{item.value}</p>
+                    <p className="text-gray-600 dark:text-gray-400">{item.value}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            {/* ── RIGHT: Lottie ────────────────────────────────────── */}
+            {/* RIGHT: Lottie */}
             <motion.div
               ref={lottieRef}
               variants={lottieVariants}
