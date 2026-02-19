@@ -88,19 +88,22 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
         className="w-12 h-12 mb-3 flex items-center justify-center"
         whileHover={{ rotate: [0, -8, 8, -4, 4, 0], transition: { duration: 0.5 } }}
       >
-        <img
-          src={skill.icon}
-          alt={skill.name}
-          className="w-full h-full object-contain dark:brightness-90"
-          onError={(e) => {
-            const img = e.target as HTMLImageElement;
-            img.style.display = "none";
-            const fallback = img.nextSibling as HTMLElement;
-            if (fallback) fallback.style.display = "flex";
-          }}
-        />
-        <div className="hidden w-12 h-12 bg-indigo-600 rounded-lg items-center justify-center text-white font-bold text-lg">
-          {skill.name.charAt(0)}
+        {/* ✅ White rounded bg in dark mode so black icons (Express, Next.js, GitHub) stay visible */}
+        <div className="w-12 h-12 flex items-center justify-center rounded-lg dark:bg-white dark:p-1.5">
+          <img
+            src={skill.icon}
+            alt={skill.name}
+            className="w-full h-full object-contain"
+            onError={(e) => {
+              const img = e.target as HTMLImageElement;
+              img.style.display = "none";
+              const fallback = img.nextSibling as HTMLElement;
+              if (fallback) fallback.style.display = "flex";
+            }}
+          />
+          <div className="hidden w-full h-full bg-indigo-600 rounded-lg items-center justify-center text-white font-bold text-lg">
+            {skill.name.charAt(0)}
+          </div>
         </div>
       </motion.div>
 
@@ -178,7 +181,6 @@ export default function Skills() {
       ref={sectionRef}
       className="relative py-24 bg-gray-50 dark:bg-black overflow-hidden"
     >
-      {/* Decorative background blobs */}
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
@@ -191,7 +193,6 @@ export default function Skills() {
       />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section heading */}
         <motion.div
           ref={headingRef}
           variants={headingVariants}
@@ -210,7 +211,6 @@ export default function Skills() {
           />
         </motion.div>
 
-        {/* Categories */}
         <div className="space-y-14">
           {skillCategories.map((category, i) => (
             <CategoryBlock key={category.category} category={category} index={i} />
