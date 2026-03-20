@@ -105,18 +105,18 @@ export default function Hero() {
       className="min-h-screen flex items-center relative overflow-hidden pt-1"
     >
       {/* ── Background ───────────────────────────────────────── */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#eef4fc] via-white to-[#eef4fc] dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 -z-10" />
 
       {/* Decorative parallax blobs */}
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
-        className="absolute top-16 -left-24 w-72 h-72 bg-blue-100 dark:bg-blue-900 rounded-full opacity-50 blur-3xl -z-10 pointer-events-none"
+        className="absolute top-16 -left-24 w-72 h-72 bg-[#d6e6f7] dark:bg-[#2B5FA6] rounded-full opacity-50 blur-3xl -z-10 pointer-events-none"
       />
       <motion.div
         aria-hidden
         style={{ y: blob2Y }}
-        className="absolute bottom-16 -right-24 w-80 h-80 bg-indigo-100 dark:bg-indigo-900 rounded-full opacity-40 blur-3xl -z-10 pointer-events-none"
+        className="absolute bottom-16 -right-24 w-80 h-80 bg-[#d6e6f7] dark:bg-[#2B5FA6] rounded-full opacity-40 blur-3xl -z-10 pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -143,7 +143,7 @@ export default function Hero() {
           >
             Hello! I'm{" "}
             <motion.span
-              className="text-blue-600 inline-block"
+              className="text-[#2B5FA6] inline-block"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.55, ease: "easeOut" }}
@@ -208,7 +208,7 @@ export default function Hero() {
           >
             <motion.a
               href="#projects"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium inline-flex items-center gap-2"
+              className="bg-[#2B5FA6] text-white px-8 py-3 rounded-lg font-medium inline-flex items-center gap-2"
               whileHover={{
                 scale: 1.04,
                 backgroundColor: "rgb(29 78 216)",

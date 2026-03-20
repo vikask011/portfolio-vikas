@@ -54,13 +54,13 @@ export default function Achievements() {
             return (
               <div
                 key={achievement.title}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-800 rounded-lg p-6 border border-blue-100 dark:border-gray-700 hover:shadow-lg dark:hover:shadow-blue-900/20 transition-all"
+                className="bg-gradient-to-br from-[#eef4fc] to-[#eef4fc] dark:from-gray-800 dark:to-gray-800 rounded-lg p-6 border border-[#2B5FA6] dark:border-gray-700 hover:shadow-lg dark:hover:shadow-[#2B5FA6]/20 transition-all"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-lg mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#2B5FA6] text-white rounded-lg mb-4">
                   <Icon size={24} />
                 </div>
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm">{achievement.title}</h4>
-                <p className="text-blue-600 dark:text-blue-400 text-xs font-medium mb-2">{achievement.description}</p>
+                <p className="text-[#2B5FA6] dark:text-[#2B5FA6] text-xs font-medium mb-2">{achievement.description}</p>
                 <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed">{achievement.detail}</p>
               </div>
             )
@@ -72,7 +72,7 @@ export default function Achievements() {
           <ul className="space-y-4">
             {highlights[0].items.map((item) => (
               <li key={item} className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-6 h-6 mt-1 bg-blue-600 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-6 h-6 mt-1 bg-[#2B5FA6] rounded-full flex items-center justify-center">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>

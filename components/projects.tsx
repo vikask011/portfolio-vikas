@@ -147,14 +147,14 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         />
         {/* Subtle blue tint overlay on hover */}
         <motion.div
-          className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/8 transition-colors duration-300 pointer-events-none"
+          className="absolute inset-0 bg-[#eef4fc]0/0 group-hover:bg-[#1e4a8a]/8 transition-colors duration-300 pointer-events-none"
         />
       </div>
 
       {/* Category tag */}
       <div className="px-6 pt-5">
         <motion.span
-          className="inline-block bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full border border-blue-100 dark:border-blue-500/20"
+          className="inline-block bg-[#eef4fc] dark:bg-[#2B5FA6]/20 text-[#2B5FA6] dark:text-[#2B5FA6] text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full border border-[#2B5FA6] dark:border-[#2B5FA6]/20"
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -166,7 +166,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors duration-200">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-[#2B5FA6] transition-colors duration-200">
           {project.title}
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed line-clamp-3">
@@ -202,7 +202,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-sm"
+            className="flex items-center gap-2 text-[#2B5FA6] dark:text-[#2B5FA6] font-bold text-sm"
             whileHover={{ x: 3, transition: { duration: 0.2 } }}
           >
             Live Demo
@@ -264,12 +264,12 @@ export default function Projects() {
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
-        className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-blue-100 dark:bg-blue-900/20 rounded-full opacity-40 blur-3xl pointer-events-none"
+        className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-[#d6e6f7] dark:bg-[#2B5FA6]/20 rounded-full opacity-40 blur-3xl pointer-events-none"
       />
       <motion.div
         aria-hidden
         style={{ y: blob2Y }}
-        className="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-100 dark:bg-indigo-900/20 rounded-full opacity-30 blur-3xl pointer-events-none"
+        className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#d6e6f7] dark:bg-[#2B5FA6]/20 rounded-full opacity-30 blur-3xl pointer-events-none"
       />
 
       <div className="relative max-w-6xl mx-auto px-6">
@@ -284,12 +284,12 @@ export default function Projects() {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
             Featured{" "}
-            <span className="text-blue-500">Projects</span>
+            <span className="text-[#2B5FA6]">Projects</span>
           </h2>
 
           {/* Animated underline */}
           <motion.div
-            className="h-1 bg-blue-500 rounded-full mb-5"
+            className="h-1 bg-[#eef4fc]0 rounded-full mb-5"
             initial={{ width: 0 }}
             animate={headingInView ? { width: 72 } : { width: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -325,7 +325,7 @@ export default function Projects() {
           variants={ctaVariants}
           initial="hidden"
           animate={ctaInView ? "visible" : "hidden"}
-          className="mt-20 text-center bg-blue-500/5 rounded-3xl p-12 border border-blue-500/10"
+          className="mt-20 text-center bg-[#2B5FA6]/5 rounded-3xl p-12 border border-[#2B5FA6]/10"
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             Want to discuss a project?

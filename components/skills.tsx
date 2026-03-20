@@ -88,29 +88,26 @@ function SkillCard({ skill }: { skill: { name: string; icon: string } }) {
         className="w-12 h-12 mb-3 flex items-center justify-center"
         whileHover={{ rotate: [0, -8, 8, -4, 4, 0], transition: { duration: 0.5 } }}
       >
-        {/* ✅ White rounded bg in dark mode so black icons (Express, Next.js, GitHub) stay visible */}
-        <div className="w-12 h-12 flex items-center justify-center rounded-lg dark:bg-white dark:p-1.5">
-          <img
-            src={skill.icon}
-            alt={skill.name}
-            className="w-full h-full object-contain"
-            onError={(e) => {
-              const img = e.target as HTMLImageElement;
-              img.style.display = "none";
-              const fallback = img.nextSibling as HTMLElement;
-              if (fallback) fallback.style.display = "flex";
-            }}
-          />
-          <div className="hidden w-full h-full bg-indigo-600 rounded-lg items-center justify-center text-white font-bold text-lg">
-            {skill.name.charAt(0)}
-          </div>
+        <img
+          src={skill.icon}
+          alt={skill.name}
+          className="w-full h-full object-contain dark:brightness-90"
+          onError={(e) => {
+            const img = e.target as HTMLImageElement;
+            img.style.display = "none";
+            const fallback = img.nextSibling as HTMLElement;
+            if (fallback) fallback.style.display = "flex";
+          }}
+        />
+        <div className="hidden w-12 h-12 bg-[#2B5FA6] rounded-lg items-center justify-center text-white font-bold text-lg">
+          {skill.name.charAt(0)}
         </div>
       </motion.div>
 
       <span className="font-medium text-gray-700 dark:text-gray-300 text-sm">{skill.name}</span>
 
       <motion.div
-        className="h-0.5 bg-indigo-400 rounded-full mt-1"
+        className="h-0.5 bg-[#2B5FA6] rounded-full mt-1"
         initial={{ width: 0 }}
         whileHover={{ width: "60%" }}
         transition={{ duration: 0.25 }}
@@ -139,7 +136,7 @@ function CategoryBlock({
     >
       <div className="flex items-center gap-3 mb-6">
         <motion.div
-          className="w-1 rounded-full bg-indigo-500"
+          className="w-1 rounded-full bg-[#2B5FA6]"
           initial={{ height: 0 }}
           animate={inView ? { height: 28 } : { height: 0 }}
           transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
@@ -181,10 +178,11 @@ export default function Skills() {
       ref={sectionRef}
       className="relative py-24 bg-gray-50 dark:bg-black overflow-hidden"
     >
+      {/* Decorative background blobs */}
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
-        className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-100 dark:bg-indigo-950 rounded-full opacity-40 dark:opacity-20 blur-3xl pointer-events-none"
+        className="absolute -top-24 -left-24 w-96 h-96 bg-[#d6e6f7] dark:bg-[#2B5FA6] rounded-full opacity-40 dark:opacity-20 blur-3xl pointer-events-none"
       />
       <motion.div
         aria-hidden
@@ -193,6 +191,7 @@ export default function Skills() {
       />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section heading */}
         <motion.div
           ref={headingRef}
           variants={headingVariants}
@@ -204,13 +203,14 @@ export default function Skills() {
             Skills &amp; Expertise
           </h2>
           <motion.div
-            className="mt-3 h-1 bg-indigo-500 rounded-full"
+            className="mt-3 h-1 bg-[#2B5FA6] rounded-full"
             initial={{ width: 0 }}
             animate={headingInView ? { width: 64 } : { width: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           />
         </motion.div>
 
+        {/* Categories */}
         <div className="space-y-14">
           {skillCategories.map((category, i) => (
             <CategoryBlock key={category.category} category={category} index={i} />

@@ -13,10 +13,10 @@ export default function Contact() {
           {/* Email */}
           <a
             href="mailto:vikas95116@gmail.com"
-            className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg dark:hover:shadow-blue-900/20 transition-all text-center"
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#2B5FA6] dark:hover:border-[#2B5FA6] hover:shadow-lg dark:hover:shadow-[#2B5FA6]/20 transition-all text-center"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-500/10 rounded-lg mb-4">
-              <Mail className="text-blue-600 dark:text-blue-400" size={24} />
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-[#d6e6f7] dark:bg-[#2B5FA6]/20 rounded-lg mb-4">
+              <Mail className="text-[#2B5FA6] dark:text-[#2B5FA6]" size={24} />
             </div>
             <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Email</h3>
             <p className="text-gray-600 dark:text-gray-400 break-all">vikask050905@gmail.com</p>
@@ -25,10 +25,10 @@ export default function Contact() {
           {/* Phone */}
           <a
             href="tel:+919986156229"
-            className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg dark:hover:shadow-blue-900/20 transition-all text-center"
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#2B5FA6] dark:hover:border-[#2B5FA6] hover:shadow-lg dark:hover:shadow-[#2B5FA6]/20 transition-all text-center"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-500/10 rounded-lg mb-4">
-              <Phone className="text-blue-600 dark:text-blue-400" size={24} />
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-[#d6e6f7] dark:bg-[#2B5FA6]/20 rounded-lg mb-4">
+              <Phone className="text-[#2B5FA6] dark:text-[#2B5FA6]" size={24} />
             </div>
             <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Phone</h3>
             <p className="text-gray-600 dark:text-gray-400">+91 9986156229</p>
@@ -39,10 +39,10 @@ export default function Contact() {
             href="https://www.linkedin.com/in/vikas-k-95o/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg dark:hover:shadow-blue-900/20 transition-all text-center"
+            className="bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-[#2B5FA6] dark:hover:border-[#2B5FA6] hover:shadow-lg dark:hover:shadow-[#2B5FA6]/20 transition-all text-center"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-500/10 rounded-lg mb-4">
-              <Linkedin className="text-blue-600 dark:text-blue-400" size={24} />
+            <div className="inline-flex items-center justify-center w-12 h-12 bg-[#d6e6f7] dark:bg-[#2B5FA6]/20 rounded-lg mb-4">
+              <Linkedin className="text-[#2B5FA6] dark:text-[#2B5FA6]" size={24} />
             </div>
             <h3 className="font-semibold text-gray-900 dark:text-white mb-2">LinkedIn</h3>
             <p className="text-gray-600 dark:text-gray-400">Connect with me</p>
@@ -55,7 +55,7 @@ export default function Contact() {
             href="https://github.com/vikask011"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-300 rounded-full transition-all"
+            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-[#1e4a8a] dark:hover:bg-[#1e4a8a] hover:text-white text-gray-700 dark:text-gray-300 rounded-full transition-all"
           >
             <Github size={20} />
           </a>
@@ -63,13 +63,13 @@ export default function Contact() {
             href="https://www.linkedin.com/in/vikas-k-95o/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-300 rounded-full transition-all"
+            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-[#1e4a8a] dark:hover:bg-[#1e4a8a] hover:text-white text-gray-700 dark:text-gray-300 rounded-full transition-all"
           >
             <Linkedin size={20} />
           </a>
           <a
             href="mailto:vikas95116@gmail.com"
-            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white text-gray-700 dark:text-gray-300 rounded-full transition-all"
+            className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-[#1e4a8a] dark:hover:bg-[#1e4a8a] hover:text-white text-gray-700 dark:text-gray-300 rounded-full transition-all"
           >
             <Mail size={20} />
           </a>

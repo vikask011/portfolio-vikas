@@ -92,12 +92,12 @@ export default function About() {
       <motion.div
         aria-hidden
         style={{ y: blob1Y }}
-        className="absolute top-20 right-10 w-72 h-72 bg-blue-100 dark:bg-blue-900 rounded-full blur-3xl opacity-20 pointer-events-none"
+        className="absolute top-20 right-10 w-72 h-72 bg-[#d6e6f7] dark:bg-[#2B5FA6] rounded-full blur-3xl opacity-20 pointer-events-none"
       />
       <motion.div
         aria-hidden
         style={{ y: blob2Y }}
-        className="absolute bottom-20 left-10 w-96 h-96 bg-blue-200 dark:bg-blue-800 rounded-full blur-3xl opacity-30 pointer-events-none"
+        className="absolute bottom-20 left-10 w-96 h-96 bg-[#aecdef] dark:bg-[#2B5FA6] rounded-full blur-3xl opacity-30 pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -112,7 +112,7 @@ export default function About() {
         >
           <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
           <motion.div
-            className="h-1 bg-blue-600 mx-auto rounded-full"
+            className="h-1 bg-[#2B5FA6] mx-auto rounded-full"
             initial={{ width: 0 }}
             animate={headingInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.55, delay: 0.3, ease: "easeOut" }}
@@ -143,7 +143,7 @@ export default function About() {
             >
               <motion.p
                 variants={paraVariants}
-                className="first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-1 first-letter:float-left"
+                className="first-letter:text-5xl first-letter:font-bold first-letter:text-[#2B5FA6] first-letter:mr-1 first-letter:float-left"
               >
                 Full Stack Engineer with a strong foundation in designing and
                 deploying production-grade web applications. Proficient in the
@@ -174,11 +174,11 @@ export default function About() {
                       transition: { duration: 0.2 },
                     }}
                     className="group p-6 rounded-xl transition-colors duration-200 border-l-4 border-transparent cursor-default
-                      hover:bg-blue-50 dark:hover:bg-gray-700"
+                      hover:bg-[#eef4fc] dark:hover:bg-gray-700"
                   >
                     <h3 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                       <motion.span
-                        className="w-2 h-2 bg-blue-600 rounded-full inline-block"
+                        className="w-2 h-2 bg-[#2B5FA6] rounded-full inline-block"
                         whileHover={{ scale: 1.5 }}
                         transition={{ duration: 0.2 }}
                       />

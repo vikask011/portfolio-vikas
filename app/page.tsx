@@ -15,8 +15,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main>
+      <header>
+        <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      </header>
+      <main id="main-content">
         <Hero />
         <About />
         <Skills />
@@ -26,6 +28,9 @@ export default function Home() {
         <Certificates />
         <Contact />
       </main>
+      <footer className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+        © {new Date().getFullYear()} Vikas K. All rights reserved.
+      </footer>
     </div>
   )
 }

@@ -48,7 +48,7 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
+                className="text-gray-700 dark:text-gray-200 hover:text-[#2B5FA6] dark:hover:text-[#2B5FA6] transition-colors font-medium"
               >
                 {item.label}
               </a>
@@ -61,7 +61,7 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition font-medium"
+              className="flex items-center gap-2 bg-[#2B5FA6] text-white px-6 py-2 rounded-lg hover:bg-[#1e4a8a] transition font-medium"
             >
               <FileText size={16} />
               View Resume
@@ -106,7 +106,7 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="block text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-2"
+                className="block text-gray-700 dark:text-gray-200 hover:text-[#2B5FA6] dark:hover:text-[#2B5FA6] transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -117,7 +117,7 @@ export default function Navbar({ activeSection, setActiveSection }: any) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition font-medium mt-2"
+              className="flex items-center justify-center gap-2 bg-[#2B5FA6] text-white px-4 py-2 rounded-lg hover:bg-[#1e4a8a] transition font-medium mt-2"
               onClick={() => setIsOpen(false)}
             >
               <FileText size={16} />
